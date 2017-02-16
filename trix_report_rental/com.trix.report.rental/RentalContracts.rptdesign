@@ -1,0 +1,1698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.3.1.v201309091055 Build &lt;4.3.1.v20130917-1035></property>
+    <text-property name="title">Рентал договори</text-property>
+    <property name="units">in</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <property name="locale">bulgarian</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">com.trix.report.rental/BaseLibrary.rptlibrary</property>
+            <property name="namespace">BaseLibrary</property>
+        </structure>
+        <structure>
+            <property name="fileName">com.trix.report.rental/RentalLibrary.rptlibrary</property>
+            <property name="namespace">RentalLibrary</property>
+        </structure>
+    </list-property>
+    <list-property name="cssStyleSheets">
+        <structure>
+            <property name="fileName">com.trix.report.rental/BaseStyle.css</property>
+            <property name="useExternalCss">false</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="RentalDataSource" id="6"
+ extends="RentalLibrary.RentalDataSource">
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://localhost/3ixrental</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">MTIz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="RentalContractsDataSet" id="7">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">documentNo</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">documentNo</text-property>
+                    <text-property name="heading">documentNo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">documentDate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">documentDate</text-property>
+                    <text-property name="heading">documentDate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">endorser</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">endorser</text-property>
+                    <text-property name="heading">endorser</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">bookingLocation</text-property>
+                    <text-property name="heading">bookingLocation</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">codeNo</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">codeNo</text-property>
+                    <text-property name="heading">codeNo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">checkInDateTime</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">checkInDateTime</text-property>
+                    <text-property name="heading">checkInDateTime</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">checkOutDateTime</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">checkOutDateTime</text-property>
+                    <text-property name="heading">checkOutDateTime</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">days</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">days</text-property>
+                    <text-property name="heading">days</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">addressAddress1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">addressTakeout</text-property>
+                    <text-property name="heading">addressTakeout</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">addressAddress1_10</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">addressGiveout</text-property>
+                    <text-property name="heading">addressGiveout</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pricePerDayAfterDiscountAmount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">pricePerDayAfterDiscountAmount</text-property>
+                    <text-property name="heading">pricePerDayAfterDiscountAmount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name_12</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">pricePerDayAfterDiscountCurrency</text-property>
+                    <text-property name="heading">pricePerDayAfterDiscountCurrency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">priceAfterDiscountAmount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">priceAfterDiscountAmount</text-property>
+                    <text-property name="heading">priceAfterDiscountAmount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name_14</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">priceAfterDiscountCurrency</text-property>
+                    <text-property name="heading">priceAfterDiscountCurrency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">depositAfterDiscountAmount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">depositAfterDiscountAmount</text-property>
+                    <text-property name="heading">depositAfterDiscountAmount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name_16</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">depositAfterDiscountCurrency</text-property>
+                    <text-property name="heading">depositAfterDiscountCurrency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">totalAmount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">totalAmount</text-property>
+                    <text-property name="heading">totalAmount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name_18</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">totalCurrency</text-property>
+                    <text-property name="heading">totalCurrency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">deliveryPriceAfterDiscountAmount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">deliveryPriceAfterDiscountAmount</text-property>
+                    <text-property name="heading">deliveryPriceAfterDiscountAmount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name_20</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">deliveryPriceAfterDiscountCurrency</text-property>
+                    <text-property name="heading">deliveryPriceAfterDiscountCurrency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">returnPriceAfterDiscountAmount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">returnPriceAfterDiscountAmount</text-property>
+                    <text-property name="heading">returnPriceAfterDiscountAmount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name_22</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">returnPriceAfterDiscountCurrency</text-property>
+                    <text-property name="heading">returnPriceAfterDiscountCurrency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">nwtDeliveryPriceAfterDiscountAmount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">nwtDeliveryPriceAfterDiscountAmount</text-property>
+                    <text-property name="heading">nwtDeliveryPriceAfterDiscountAmount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name_24</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">nwtDeliveryPriceAfterDiscountCurrency</text-property>
+                    <text-property name="heading">nwtDeliveryPriceAfterDiscountCurrency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">nwtReturnPriceAfterDiscountAmount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">nwtReturnPriceAfterDiscountAmount</text-property>
+                    <text-property name="heading">nwtReturnPriceAfterDiscountAmount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name_26</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">nwtReturnPriceAfterDiscountCurrency</text-property>
+                    <text-property name="heading">nwtReturnPriceAfterDiscountCurrency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extras</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">extras</text-property>
+                    <text-property name="heading">extras</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">documentNo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">documentDate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">endorser</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">codeNo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">checkInDateTime</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">checkOutDateTime</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">days</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">addressAddress1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">addressAddress1_10</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">pricePerDayAfterDiscountAmount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">name_12</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">priceAfterDiscountAmount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">name_14</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">depositAfterDiscountAmount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">name_16</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">totalAmount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">name_18</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">deliveryPriceAfterDiscountAmount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">name_20</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">returnPriceAfterDiscountAmount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">name_22</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">nwtDeliveryPriceAfterDiscountAmount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">name_24</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">nwtReturnPriceAfterDiscountAmount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">name_26</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">extras</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">RentalDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">documentNo</property>
+                    <property name="nativeName">documentNo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">documentDate</property>
+                    <property name="nativeName">documentDate</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">endorser</property>
+                    <property name="nativeName">endorser</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">codeNo</property>
+                    <property name="nativeName">codeNo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">checkInDateTime</property>
+                    <property name="nativeName">checkInDateTime</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">checkOutDateTime</property>
+                    <property name="nativeName">checkOutDateTime</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">days</property>
+                    <property name="nativeName">days</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">addressAddress1</property>
+                    <property name="nativeName">addressAddress1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">addressAddress1_10</property>
+                    <property name="nativeName">addressAddress1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">pricePerDayAfterDiscountAmount</property>
+                    <property name="nativeName">pricePerDayAfterDiscountAmount</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">name_12</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">priceAfterDiscountAmount</property>
+                    <property name="nativeName">priceAfterDiscountAmount</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">name_14</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">depositAfterDiscountAmount</property>
+                    <property name="nativeName">depositAfterDiscountAmount</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">name_16</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">totalAmount</property>
+                    <property name="nativeName">totalAmount</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">name_18</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">deliveryPriceAfterDiscountAmount</property>
+                    <property name="nativeName">deliveryPriceAfterDiscountAmount</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">name_20</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">returnPriceAfterDiscountAmount</property>
+                    <property name="nativeName">returnPriceAfterDiscountAmount</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">name_22</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">nwtDeliveryPriceAfterDiscountAmount</property>
+                    <property name="nativeName">nwtDeliveryPriceAfterDiscountAmount</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">name_24</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">nwtReturnPriceAfterDiscountAmount</property>
+                    <property name="nativeName">nwtReturnPriceAfterDiscountAmount</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">name_26</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">extras</property>
+                    <property name="nativeName">extras</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+ rc.documentNo as documentNo,
+ rc.documentDate as documentDate,
+ CONCAT(ep.firstName, ' ', ep.lastName, ' ', e.codeNo) AS endorser,
+ bl.name as bookingLocation,
+ c.codeNo as codeNo,
+ rc.checkInDateTime as checkInDateTime,
+ rc.checkOutDateTime as checkOutDateTime,
+ rc.days as days,
+ cia.addressAddress1 as addressTakeout,
+ coa.addressAddress1 as addressGiveout,
+ rc.pricePerDayAfterDiscountAmount/100 as pricePerDayAfterDiscountAmount,
+ dpc.name as pricePerDayAfterDiscountCurrency,
+ rc.days*rc.pricePerDayAfterDiscountAmount/100 as priceAfterDiscountAmount,
+ dpc.name as priceAfterDiscountCurrency,
+ rc.depositAfterDiscountAmount/100 as depositAfterDiscountAmount,
+ dc.name as depositAfterDiscountCurrency,
+ rc.totalAmount/100 as totalAmount,
+ tc.name as totalCurrency,
+ rc.deliveryPriceAfterDiscountAmount/100 as deliveryPriceAfterDiscountAmount,
+ dvpc.name as deliveryPriceAfterDiscountCurrency,
+ rc.returnPriceAfterDiscountAmount/100 as returnPriceAfterDiscountAmount,
+ retpc.name as returnPriceAfterDiscountCurrency,
+ rc.nwtDeliveryPriceAfterDiscountAmount/100 as nwtDeliveryPriceAfterDiscountAmount,
+ nwtdpc.name as nwtDeliveryPriceAfterDiscountCurrency,
+ rc.nwtReturnPriceAfterDiscountAmount/100 as nwtReturnPriceAfterDiscountAmount,
+ nwtrpc.name as nwtReturnPriceAfterDiscountCurrency,
+ (select ifnull(sum(rentalExtraPriceAfterDiscountAmount/100),0) from __doc__RentalContractExtra rce where rce.rentalContractId=rc.id) as extras
+from __doc__RentalContract rc
+left join __nom__AutomotiveCar c on c.id=rc.rentalObjectId
+left join __nom__RentalAddress cia on cia.id=rc.checkInAddressId
+left join __nom__RentalAddress coa on coa.id=rc.checkOutAddressId
+left join __nom__Endorser e on e.id=rc.endorserId
+left join __nom__Person ep on ep.id=e.personId
+left join __nom__BookingLocation bl on bl.id=rc.bookingLocationId
+left join __nom__Currency dc on dc.id=rc.depositAfterDiscountCurrencyId
+left join __nom__Currency tc on tc.id=rc.totalCurrencyId 
+left join __nom__Currency dpc on dpc.id=rc.pricePerDayAfterDiscountCurrencyId 
+left join __nom__Currency dvpc on dvpc.id=deliveryPriceAfterDiscountCurrencyId 
+left join __nom__Currency retpc on retpc.id=returnPriceAfterDiscountCurrencyId 
+left join __nom__Currency nwtdpc on nwtdpc.id=rc.nwtDeliveryPriceAfterDiscountCurrencyId 
+left join __nom__Currency nwtrpc on nwtrpc.id=rc.nwtReturnPriceAfterDiscountCurrencyId 
+order by rc.checkInDateTime;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>documentNo</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>documentNo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>documentNo</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>documentDate</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>documentDate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>documentDate</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>endorser</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>767</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>endorser</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>endorser</design:label>
+            <design:formattingHints>
+              <design:displaySize>767</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>bookingLocation</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>bookingLocation</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codeNo</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>codeNo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codeNo</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>checkInDateTime</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>checkInDateTime</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>checkInDateTime</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>checkOutDateTime</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>checkOutDateTime</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>checkOutDateTime</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>days</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>11</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>days</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>days</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>addressAddress1</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>addressAddress1</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>addressAddress1</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>addressAddress1</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>addressAddress1</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>addressAddress1</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rc.pricePerDayAfterDiscountAmount/100</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>23</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rc.pricePerDayAfterDiscountAmount/100</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rc.pricePerDayAfterDiscountAmount/100</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rc.days*rc.pricePerDayAfterDiscountAmount/100</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>33</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rc.days*rc.pricePerDayAfterDiscountAmount/100</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rc.days*rc.pricePerDayAfterDiscountAmount/100</design:label>
+            <design:formattingHints>
+              <design:displaySize>35</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rc.depositAfterDiscountAmount/100</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>23</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rc.depositAfterDiscountAmount/100</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rc.depositAfterDiscountAmount/100</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>16</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rc.totalAmount/100</design:name>
+              <design:position>17</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>23</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rc.totalAmount/100</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rc.totalAmount/100</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>18</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rc.deliveryPriceAfterDiscountAmount/100</design:name>
+              <design:position>19</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>23</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rc.deliveryPriceAfterDiscountAmount/100</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rc.deliveryPriceAfterDiscountAmount/100</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>20</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rc.returnPriceAfterDiscountAmount/100</design:name>
+              <design:position>21</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>23</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rc.returnPriceAfterDiscountAmount/100</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rc.returnPriceAfterDiscountAmount/100</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>22</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rc.nwtDeliveryPriceAfterDiscountAmount/100</design:name>
+              <design:position>23</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>23</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rc.nwtDeliveryPriceAfterDiscountAmount/100</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rc.nwtDeliveryPriceAfterDiscountAmount/100</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>24</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rc.nwtReturnPriceAfterDiscountAmount/100</design:name>
+              <design:position>25</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>23</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rc.nwtReturnPriceAfterDiscountAmount/100</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rc.nwtReturnPriceAfterDiscountAmount/100</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>26</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>(select ifnull(sum(rentalExtraPriceAfterDiscountAmount/100),0) from __doc__RentalContractExtra rce where rce.rentalContractId=rc.id)</design:name>
+              <design:position>27</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>(select ifnull(sum(rentalExtraPriceAfterDiscountAmount/100),0) from __doc__RentalContractExtra rce where rce.rentalContractId=rc.id)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>(select ifnull(sum(rentalExtraPriceAfterDiscountAmount/100),0) from __doc__RentalContractExtra rce where rce.rentalContractId=rc.id)</design:label>
+            <design:formattingHints>
+              <design:displaySize>47</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab-cell" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a3</property>
+            <property name="orientation">landscape</property>
+            <property name="height">297mm</property>
+            <property name="width">420mm</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table name="RentalContractsTable" id="303">
+            <property name="numberAlign">right</property>
+            <property name="canShrink">true</property>
+            <property name="dataSet">RentalContractsDataSet</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">documentNo</property>
+                    <text-property name="displayName">documentNo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["documentNo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">documentDate</property>
+                    <text-property name="displayName">documentDate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["documentDate"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">endorser</property>
+                    <text-property name="displayName">endorser</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["endorser"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">name</property>
+                    <text-property name="displayName">bookingLocation</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">codeNo</property>
+                    <text-property name="displayName">codeNo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["codeNo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">checkInDateTime</property>
+                    <text-property name="displayName">checkInDateTime</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["checkInDateTime"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">checkOutDateTime</property>
+                    <text-property name="displayName">checkOutDateTime</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["checkOutDateTime"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">days</property>
+                    <text-property name="displayName">days</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["days"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">addressAddress1</property>
+                    <text-property name="displayName">addressTakeout</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["addressAddress1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">addressAddress1_10</property>
+                    <text-property name="displayName">addressGiveout</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["addressAddress1_10"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">pricePerDayAfterDiscountAmount</property>
+                    <text-property name="displayName">pricePerDayAfterDiscountAmount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["pricePerDayAfterDiscountAmount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">name_12</property>
+                    <text-property name="displayName">pricePerDayAfterDiscountCurrency</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name_12"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">priceAfterDiscountAmount</property>
+                    <text-property name="displayName">priceAfterDiscountAmount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["priceAfterDiscountAmount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">name_14</property>
+                    <text-property name="displayName">priceAfterDiscountCurrency</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name_14"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">depositAfterDiscountAmount</property>
+                    <text-property name="displayName">depositAfterDiscountAmount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["depositAfterDiscountAmount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">name_16</property>
+                    <text-property name="displayName">depositAfterDiscountCurrency</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name_16"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">totalAmount</property>
+                    <text-property name="displayName">totalAmount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["totalAmount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">name_18</property>
+                    <text-property name="displayName">totalCurrency</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name_18"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">deliveryPriceAfterDiscountAmount</property>
+                    <text-property name="displayName">deliveryPriceAfterDiscountAmount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["deliveryPriceAfterDiscountAmount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">name_20</property>
+                    <text-property name="displayName">deliveryPriceAfterDiscountCurrency</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name_20"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">returnPriceAfterDiscountAmount</property>
+                    <text-property name="displayName">returnPriceAfterDiscountAmount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["returnPriceAfterDiscountAmount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">name_22</property>
+                    <text-property name="displayName">returnPriceAfterDiscountCurrency</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name_22"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">nwtDeliveryPriceAfterDiscountAmount</property>
+                    <text-property name="displayName">nwtDeliveryPriceAfterDiscountAmount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["nwtDeliveryPriceAfterDiscountAmount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">name_24</property>
+                    <text-property name="displayName">nwtDeliveryPriceAfterDiscountCurrency</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name_24"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">nwtReturnPriceAfterDiscountAmount</property>
+                    <text-property name="displayName">nwtReturnPriceAfterDiscountAmount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["nwtReturnPriceAfterDiscountAmount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">name_26</property>
+                    <text-property name="displayName">nwtReturnPriceAfterDiscountCurrency</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name_26"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">extras</property>
+                    <text-property name="displayName">extras</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["extras"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="388"/>
+            <column id="389"/>
+            <column id="390"/>
+            <column id="391"/>
+            <column id="392"/>
+            <column id="393"/>
+            <column id="394"/>
+            <column id="395"/>
+            <column id="396"/>
+            <column id="397"/>
+            <column id="398"/>
+            <column id="399"/>
+            <column id="400"/>
+            <column id="401"/>
+            <column id="402"/>
+            <column id="403"/>
+            <column id="404"/>
+            <column id="405"/>
+            <column id="406"/>
+            <column id="407"/>
+            <column id="408"/>
+            <column id="409"/>
+            <column id="410"/>
+            <column id="411"/>
+            <column id="412"/>
+            <column id="413"/>
+            <column id="414"/>
+            <header>
+                <row id="304">
+                    <cell id="305">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="442">
+                            <text-property name="text">Договор № / Дата</text-property>
+                        </label>
+                    </cell>
+                    <cell id="307">
+                        <label id="443">
+                            <text-property name="text">Поръчител</text-property>
+                        </label>
+                    </cell>
+                    <cell id="308">
+                        <label id="444">
+                            <text-property name="text">Адрес резервация</text-property>
+                        </label>
+                    </cell>
+                    <cell id="309">
+                        <label id="445">
+                            <text-property name="text">А</text-property>
+                        </label>
+                    </cell>
+                    <cell id="310">
+                        <label id="446">
+                            <text-property name="text">Дата вземане</text-property>
+                        </label>
+                    </cell>
+                    <cell id="311">
+                        <label id="447">
+                            <text-property name="text">Дата връщане</text-property>
+                        </label>
+                    </cell>
+                    <cell id="312">
+                        <label id="448">
+                            <text-property name="text">Дни</text-property>
+                        </label>
+                    </cell>
+                    <cell id="313">
+                        <label id="449">
+                            <text-property name="text">Адрес вземане</text-property>
+                        </label>
+                    </cell>
+                    <cell id="314">
+                        <label id="450">
+                            <text-property name="text">Адрес връщане</text-property>
+                        </label>
+                    </cell>
+                    <cell id="315">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="451">
+                            <text-property name="text">Цена / ден</text-property>
+                        </label>
+                    </cell>
+                    <cell id="317">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="452">
+                            <text-property name="text">Цена наем</text-property>
+                        </label>
+                    </cell>
+                    <cell id="319">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="453">
+                            <text-property name="text">Депозит</text-property>
+                        </label>
+                    </cell>
+                    <cell id="321">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="454">
+                            <text-property name="text">Сума</text-property>
+                        </label>
+                    </cell>
+                    <cell id="323">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="455">
+                            <text-property name="text">Доставка</text-property>
+                        </label>
+                    </cell>
+                    <cell id="325">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="456">
+                            <text-property name="text">Връщане</text-property>
+                        </label>
+                    </cell>
+                    <cell id="327">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="457">
+                            <text-property name="text">Доставка ИРВ</text-property>
+                        </label>
+                    </cell>
+                    <cell id="329">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="458">
+                            <text-property name="text">Връщане ИРВ</text-property>
+                        </label>
+                    </cell>
+                    <cell id="331">
+                        <label id="459">
+                            <text-property name="text">Екстри</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="332">
+                    <cell id="333">
+                        <data id="415">
+                            <property name="resultSetColumn">documentNo</property>
+                        </data>
+                    </cell>
+                    <cell id="334">
+                        <data id="416">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd.MM.yyyy</property>
+                                <property name="locale">bg_BG</property>
+                            </structure>
+                            <property name="resultSetColumn">documentDate</property>
+                        </data>
+                    </cell>
+                    <cell id="335">
+                        <data id="417">
+                            <property name="resultSetColumn">endorser</property>
+                        </data>
+                    </cell>
+                    <cell id="336">
+                        <data id="418">
+                            <property name="resultSetColumn">name</property>
+                        </data>
+                    </cell>
+                    <cell id="337">
+                        <data id="419">
+                            <property name="resultSetColumn">codeNo</property>
+                        </data>
+                    </cell>
+                    <cell id="338">
+                        <data id="420">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd.MM.yyyy kk:mm</property>
+                                <property name="locale">bg_BG</property>
+                            </structure>
+                            <property name="resultSetColumn">checkInDateTime</property>
+                        </data>
+                    </cell>
+                    <cell id="339">
+                        <data id="421">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd.MM.yyyy kk:mm</property>
+                                <property name="locale">bg_BG</property>
+                            </structure>
+                            <property name="resultSetColumn">checkOutDateTime</property>
+                        </data>
+                    </cell>
+                    <cell id="340">
+                        <data id="422">
+                            <property name="resultSetColumn">days</property>
+                        </data>
+                    </cell>
+                    <cell id="341">
+                        <data id="423">
+                            <property name="resultSetColumn">addressAddress1</property>
+                        </data>
+                    </cell>
+                    <cell id="342">
+                        <data id="424">
+                            <property name="resultSetColumn">addressAddress1_10</property>
+                        </data>
+                    </cell>
+                    <cell id="343">
+                        <data id="425">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                <property name="locale">bg_BG</property>
+                            </structure>
+                            <property name="resultSetColumn">pricePerDayAfterDiscountAmount</property>
+                        </data>
+                    </cell>
+                    <cell id="344">
+                        <data id="426">
+                            <property name="resultSetColumn">name_12</property>
+                        </data>
+                    </cell>
+                    <cell id="345">
+                        <data id="427">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">priceAfterDiscountAmount</property>
+                        </data>
+                    </cell>
+                    <cell id="346">
+                        <data id="428">
+                            <property name="resultSetColumn">name_14</property>
+                        </data>
+                    </cell>
+                    <cell id="347">
+                        <data id="429">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                <property name="locale">bg_BG</property>
+                            </structure>
+                            <property name="resultSetColumn">depositAfterDiscountAmount</property>
+                        </data>
+                    </cell>
+                    <cell id="348">
+                        <data id="430">
+                            <property name="resultSetColumn">name_16</property>
+                        </data>
+                    </cell>
+                    <cell id="349">
+                        <data id="431">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">totalAmount</property>
+                        </data>
+                    </cell>
+                    <cell id="350">
+                        <data id="432">
+                            <property name="resultSetColumn">name_18</property>
+                        </data>
+                    </cell>
+                    <cell id="351">
+                        <data id="433">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">deliveryPriceAfterDiscountAmount</property>
+                        </data>
+                    </cell>
+                    <cell id="352">
+                        <data id="434">
+                            <property name="resultSetColumn">name_20</property>
+                        </data>
+                    </cell>
+                    <cell id="353">
+                        <data id="435">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">returnPriceAfterDiscountAmount</property>
+                        </data>
+                    </cell>
+                    <cell id="354">
+                        <data id="436">
+                            <property name="resultSetColumn">name_22</property>
+                        </data>
+                    </cell>
+                    <cell id="355">
+                        <data id="437">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">nwtDeliveryPriceAfterDiscountAmount</property>
+                        </data>
+                    </cell>
+                    <cell id="356">
+                        <data id="438">
+                            <property name="resultSetColumn">name_24</property>
+                        </data>
+                    </cell>
+                    <cell id="357">
+                        <data id="439">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">nwtReturnPriceAfterDiscountAmount</property>
+                        </data>
+                    </cell>
+                    <cell id="358">
+                        <data id="440">
+                            <property name="resultSetColumn">name_26</property>
+                        </data>
+                    </cell>
+                    <cell id="359">
+                        <data id="441">
+                            <property name="resultSetColumn">extras</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

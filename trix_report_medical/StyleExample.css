@@ -1,0 +1,11 @@
+.italicYellowBcg {
+	font-style:	italic;
+	background-color:	yellow;
+}
+.boldRedFont {
+	font-weight:	bold;
+	color:		red;
+}
+.rightAl {
+	text-align:	right;
+}
